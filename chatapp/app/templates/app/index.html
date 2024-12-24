@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+</head>
+<body>
+    <script>
+        var ws = new WebSocket('ws://127.0.0.1:8000/ws/sc/')
+        ws.onopen = function(){
+            console.log('Connection Made....');
+        }
+        ws.onmessage = function(event){
+            console.log('Message Recieved....',event);
+        }
+        ws.onclose = function(event){
+            console.log('Connection Closed....',event);
+        }
+    </script>
+</body>
+</html>
